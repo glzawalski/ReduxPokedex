@@ -16,14 +16,17 @@ struct ContentView: View {
         ]
     )
 
+    let navigation = NavigationManager()
+
     var body: some View {
         TabView {
-            PokemonView()
+            PokemonListView()
                 .tabItem {
                     Image(systemName: "house")
                 }
         }
         .environmentObject(store)
+        .environmentObject(navigation)
     }
 }
 
